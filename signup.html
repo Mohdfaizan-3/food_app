@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+       body{
+            text-align: center;
+        }
+        #form {
+            display: inline-block;
+            border: 1px solid black;
+            margin-top: 200px;
+           
+            
+        }
+
+
+        #email ,#password ,#name ,button{
+            display: block;
+            margin-bottom: 20px;
+            width: 300px;
+            height: 25px;
+        
+        }
+        button{
+            margin-left: 4px;
+           
+        }
+</style>
+<body>
+    <h1>signup</h1>
+    <div id="form">
+<input id="name" placeholder="enter name" type="text">
+<input id="email" placeholder="enter email" type="email">
+<input id="password" placeholder="enter password" type="password">
+<button id="btn" onclick="search(event)">Submit</button>
+    </div>
+   
+</body>
+</html>
+
+
+<script>
+
+    function Constructor(n,e,p){
+          this.name = n
+          this.email = e
+          this.password = p;
+    }
+let data = JSON.parse(localStorage.getItem("person"))||[];
+    let search  = (e)=>{
+             
+        e.preventDefault()
+        
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let obj = new Constructor(name,email,password)
+         
+        data.push(obj);
+        localStorage.setItem("person",JSON.stringify(data))
+        
+        document.getElementById("name").value=null;
+         document.getElementById("email").value=null;
+         document.getElementById("password").value=null;
+
+         window.location.href="login.html"
+
+        console.log(name)
+    }
+</script>

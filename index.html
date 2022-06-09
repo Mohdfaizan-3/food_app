@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css/index.css">
+    <title>Document</title>
+    <style>
+        
+        #in {
+            width: 222px;
+            margin-left: 40.9%;
+        }
+
+        #box {
+            margin-left: 40.9%;
+            height: 200px;
+            width: 222px;
+            border: solid 1px black;
+            border-top: none;
+            overflow: scroll;
+        }
+    </style>
+</head>
+ 
+
+<body>
+<div id="navbar"></div>
+<div id="name"></div>
+
+<input id="in" placeholder="enter the recipie">
+<div id="box"></div>
+<div id="container"></div>
+</body>
+
+</html>
+
+<script src="script/index.js"></script>
+<script type="module" >
+    // const recipie_of_the_day="http://www.themealdb.com/api/json/v1/1/latest.php"
+
+  import navbar from "./components/componets.js"
+    //console.log(navbar())
+    document.getElementById('navbar').innerHTML = navbar();
+
+</script>
